@@ -1,0 +1,2 @@
+# ESP32-S3-CAM-OPENMV-PCB
+一个基于ESP32-S3-WROOM-1模组的机器视觉模块，可以刷OPENMV。
