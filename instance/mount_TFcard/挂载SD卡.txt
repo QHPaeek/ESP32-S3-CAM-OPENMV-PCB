@@ -1,0 +1,11 @@
+import framebuf
+from machine import Pin, SPI
+import machine, os
+import sdcard
+SD_CS = machine.Pin(13)
+spi = SPI(-1, baudrate=100000, polarity=0, phase=0, sck=Pin(10), mosi=Pin(11), miso=Pin(12))
+spi.init()
+sd = sdcard.SDCard(spi, SD_CS)
+vfs = os.VfsFat(sd)
+os.mount(sd,"/sd")
+##如果提示no sdcard，则检查焊接或者换一张正规SD卡
